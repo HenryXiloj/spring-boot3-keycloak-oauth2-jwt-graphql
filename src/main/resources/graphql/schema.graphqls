@@ -1,0 +1,46 @@
+type Query {
+    getName: String
+    getJWTByUser: JWTTokenDto
+}
+
+type JWTTokenDto {
+    sub: String
+    resourceAccess: ResourceAccess
+    emailVerified: Boolean
+    allowedOrigins: [String]
+    iss: String
+    typ: String
+    preferredUsername: String
+    givenName: String
+    sid: String
+    aud: [String]
+    acr: String
+    realmAccess: RealmAccess
+    azp: String
+    scope: String
+    name: String
+    exp: Float
+    sessionState: String
+    iat: Float
+    familyName: String
+    jti: String
+    email: String
+    additionalProperties: JSON
+}
+
+type ResourceAccess {
+    account: Account
+    additionalProperties: JSON
+}
+
+type Account {
+    roles: [String]
+    additionalProperties: JSON
+}
+
+type RealmAccess {
+    roles: [String]
+    additionalProperties: JSON
+}
+
+scalar JSON
